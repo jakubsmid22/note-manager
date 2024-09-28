@@ -38,7 +38,7 @@ const Note = ({ id }: NoteProps) => {
   };
 
   return (
-    <div className="bg-[#171717] p-2 space-y-5 rounded-md w-full">
+    <div className="bg-secondary p-2 space-y-5 rounded-md w-full border border-[#171717]">
       <div className="flex justify-between">
         <h2 className="font-bold text-2xl w-11/12">{title}</h2>
         <p className="text-center whitespace-nowrap">{createdAtString}</p>

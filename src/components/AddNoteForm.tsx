@@ -39,7 +39,7 @@ const AddNoteForm = () => {
   return (
     <form
       onSubmit={(e) => add(e)}
-      className={`flex w-full flex-col gap-5 border border-white p-5 rounded-md overflow-hidden transition-all duration-1000 ${
+      className={`flex w-full flex-col gap-5 border border-tertiary p-5 rounded-md overflow-hidden transition-all duration-1000 ${
         !isOpen ? "h-[70px]" : "h-[500px]"
       } `}
     >
@@ -51,7 +51,7 @@ const AddNoteForm = () => {
       </div>
       <input
         type="text"
-        className="p-2 rounded bg-[#171717] text-white placeholder-gray-500"
+        className="p-2 rounded bg-secondary text-tertiary placeholder:text-tertiary  border border-[#171717]"
         placeholder="Title"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
@@ -59,7 +59,7 @@ const AddNoteForm = () => {
       />
       <textarea
         placeholder="Text"
-        className="p-2 rounded bg-[#171717] text-white placeholder-gray-500 h-96"
+        className="p-2 rounded bg-secondary text-tertiary placeholder:text-tertiary  h-96 border border-[#171717]"
         value={text}
         onChange={(e) => setText(e.target.value)}
         required

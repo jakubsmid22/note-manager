@@ -18,10 +18,10 @@ const customStyles = {
     bottom: "auto",
     marginRight: "-50%",
     transform: "translate(-50%, -50%)",
-    backgroundColor: "#606060",
+    backgroundColor: "var(--primary)",
     borderRadius: "8px",
     padding: "20px",
-    color: "#f5f5f5",
+    color: "var(--tertiary)",
     maxWidth: "800px",
     width: "90%",
     height: "fit-content",
@@ -63,10 +63,10 @@ const NoteEditor = () => {
   };
 
   return (
-    <Modal isOpen={isOpen} style={customStyles} onRequestClose={closeModal}>
+    <Modal isOpen={isOpen} style={customStyles} onRequestClose={closeModal} closeTimeoutMS={500}>
       <button
         onClick={closeModal}
-        className="absolute top-2 right-2 text-white"
+        className="absolute top-2 right-2 text-tertiary"
       >
         <VscEyeClosed />
       </button>
@@ -75,18 +75,18 @@ const NoteEditor = () => {
         type="text"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
-        className="w-full mb-4 p-2 rounded bg-[#171717] text-white placeholder-gray-500"
+        className="w-full mb-4 p-2 rounded bg-secondary text-tertiary placeholder-primary"
         placeholder="Title"
       />
       <textarea
         value={text}
         onChange={(e) => setText(e.target.value)}
-        className="w-full mb-4 p-2 rounded bg-[#171717]  text-white placeholder-gray-500 h-96"
+        className="w-full mb-4 p-2 rounded bg-secondary text-tertiary placeholder-primary h-96"
         placeholder="Note text"
       />
       <button
         onClick={save}
-        className="w-full py-2 bg-[#171717] hover:bg-[#606060] border border-transparent hover:border-[#171717] hover:text-[#171717] hover:font-bold transition-all duration-300  text-white rounded"
+        className="w-full py-2 bg-secondary hover:bg-primary border border-transparent hover:border-secondary hover:text-secondary hover:font-bold transition-all duration-300  text-tertiary rounded"
       >
         Save Note
       </button>
