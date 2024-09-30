@@ -44,7 +44,10 @@ const AddNoteForm = () => {
       } `}
     >
       <div className="flex justify-between">
-        <h2 className="text-2xl uppercase">Add Note</h2>
+        <div className="flex items-center gap-5">
+          <h2 className="text-2xl uppercase">Add Note</h2>
+          <p className={`${isOpen ? "opacity-100" : "opacity-0"} transition-opacity duration-500`} >You can use Markdown!</p>
+        </div>
         <button type="button" onClick={toggle}>
           {isOpen ? <FiMinimize2 /> : <FiMaximize2 />}
         </button>
